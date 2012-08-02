@@ -1,10 +1,9 @@
-
 all: main.o 
-	g++ -o main main.o
+	g++ -lcurl -o main main.o
 	make clean
 	
 main.o: Src/main.cpp
-	g++ -o main.o -c Src/main.cpp -W -Wall -ansi -pedantic
+	g++ -lcurl -o main.o -c -L/opt/local/include/curl Src/main.cpp -W -Wall -ansi -pedantic
 	
 
 clean:
