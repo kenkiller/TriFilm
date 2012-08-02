@@ -1,5 +1,11 @@
+
 all: main.o 
 	g++ -o main main.o
+	make clean
+	
+main.o: Src/main.cpp
+	g++ -o main.o -c Src/main.cpp -W -Wall -ansi -pedantic
+	
 
-main.o: src/main.cpp
-	g++ -o main.o -c src/main.cpp -W -Wall -ansi -pedantic
+clean:
+	rm *.o
